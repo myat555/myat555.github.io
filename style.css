@@ -114,26 +114,18 @@ body {
     margin-bottom: 24px;
 }
 
-.avatar-placeholder {
+.avatar {
     width: 140px;
     height: 140px;
-    margin: 0 auto;
     border-radius: 50%;
-    background-color: var(--bg-secondary);
     border: 3px solid var(--border);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    object-fit: cover;
     transition: var(--transition);
 }
 
-.avatar-placeholder:hover {
+.avatar:hover {
     transform: scale(1.05);
     border-color: var(--accent);
-}
-
-.avatar-placeholder svg {
-    color: var(--text-secondary);
 }
 
 .name {
@@ -286,6 +278,74 @@ section p {
 }
 
 /* ===========================
+   Resume Section
+   =========================== */
+.resume-container {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 28px;
+    overflow: hidden;
+}
+
+.resume-actions {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+}
+
+.download-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: var(--accent);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: var(--transition);
+}
+
+.download-button:hover {
+    background-color: var(--accent-hover);
+    transform: translateY(-2px);
+}
+
+.download-button.secondary {
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+    border: 1px solid var(--border);
+}
+
+.download-button.secondary:hover {
+    background-color: var(--accent);
+    color: white;
+    border-color: var(--accent);
+}
+
+.download-button svg {
+    flex-shrink: 0;
+}
+
+.resume-preview {
+    width: 100%;
+    height: 800px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: var(--bg-secondary);
+}
+
+.resume-preview iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* ===========================
    Contact Section
    =========================== */
 .contact {
@@ -353,6 +413,14 @@ footer {
         grid-template-columns: 1fr;
     }
 
+    .resume-container {
+        padding: 20px;
+    }
+
+    .resume-preview {
+        height: 600px;
+    }
+
     .theme-toggle {
         width: 44px;
         height: 44px;
@@ -366,12 +434,25 @@ footer {
         padding: 40px 0;
     }
 
-    .avatar-placeholder {
+    .avatar {
         width: 120px;
         height: 120px;
     }
 
     .name {
         font-size: 1.75rem;
+    }
+
+    .resume-preview {
+        height: 500px;
+    }
+
+    .resume-actions {
+        flex-direction: column;
+    }
+
+    .download-button {
+        width: 100%;
+        justify-content: center;
     }
 }
